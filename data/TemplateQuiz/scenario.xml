@@ -1,0 +1,42 @@
+<Scenario>
+	<FSM name="クイズ" initial="開始前">
+		<State name="開始前">
+			<Event name="開始" action="openDialog" trans="一問目">
+			</Event>
+		</State>
+		<State name="一問目" message="パンはパンでも食べられないパンは？">
+			<Event name="コッペパン" action="wrong" trans="終了">
+			</Event>
+			<Event name="フランスパン" action="wrong" trans="終了">
+			</Event>
+			<Event name="フライパン" action="right" trans="二問目">
+			</Event>
+			<Event name="食パン" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="二問目" message="トリはトリでも飛べないトリは？">
+			<Event name="ワシ" action="wrong" trans="終了">
+			</Event>
+			<Event name="チリトリ" action="right" trans="三問目">
+			</Event>
+			<Event name="ハト" action="wrong" trans="終了">
+			</Event>
+			<Event name="カラス" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="三問目" message="ふとんがhu？">
+			<Event name="ワシ" action="wrong" trans="終了">
+			</Event>
+			<Event name="ふっとんだ" action="right" trans="全問正解">
+			</Event>
+			<Event name="カニ" action="wrong" trans="終了">
+			</Event>
+			<Event name="カラス" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="全問正解" message="おめでとう！！">
+		</State>
+		<State name="終了" message="ゲームオーバー">
+		</State>
+	</FSM>
+</Scenario>

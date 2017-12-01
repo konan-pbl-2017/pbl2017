@@ -1,0 +1,7 @@
+Radish2D作業リスト
+
+[v]1. Ground2Dの第一引数がnullのときにヌルポで落ちる（落ちない時もある）
+[v]2. Spriteとステージで衝突判定ができないか?(格闘ゲーム用) → OvergroundSprite2D
+[v]3. RPG用のマップをどういう形式で表現するか? → Map2D, SimpleRolePlayingGame
+[v]4. Ground2Dの第一引数でステージ、第二引数で画像を指定しても画像が背景として表示されない
+[v]5. キーの割り当てが不足している（BUTTON_C、BUTTON_D）

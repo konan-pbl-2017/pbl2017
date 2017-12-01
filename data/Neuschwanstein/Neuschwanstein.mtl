@@ -1,0 +1,96 @@
+# Exported from DeleD's Wavefront OBJ Exporter 1.0
+# Visit http://www.delgine.com for more information.
+newmtl system
+map_Kd system.bmp
+newmtl neu-1
+map_Kd neu-1.jpg
+newmtl tower1
+map_Kd tower1.jpg
+newmtl tower_top1
+map_Kd tower_top1.jpg
+newmtl roof1
+Kd 0.286274509803922 0.27843137254902 0.258823529411765
+newmtl entrance_top_1
+map_Kd entrance_top_1.jpg
+newmtl gate_wall1
+map_Kd gate_wall1.jpg
+newmtl gate_window1
+map_Kd gate_window1.jpg
+newmtl gate_window2
+map_Kd gate_window2.jpg
+newmtl gate_wall_edge1
+map_Kd gate_wall_edge1.jpg
+newmtl entrance1
+map_Kd entrance1.jpg
+newmtl gate1
+map_Kd gate1.jpg
+newmtl gate_bridge1
+map_Kd gate_bridge1.jpg
+newmtl bild5
+Kd 0.768627450980392 0.768627450980392 0.768627450980392
+newmtl street1
+map_Kd street1.jpg
+newmtl gate_door1
+map_Kd gate_door1.jpg
+newmtl gate_wall2
+map_Kd gate_wall2.jpg
+newmtl gate_wall3
+map_Kd gate_wall3.jpg
+newmtl gate2
+map_Kd gate2.jpg
+newmtl bild3
+Kd 0.396078431372549 0.286274509803922 0.2
+newmtl balkony_wall1
+map_Kd balkony_wall1.jpg
+newmtl gable3
+map_Kd gable3.jpg
+newmtl black
+Kd 0 0 0
+newmtl material19
+Kd 0.615686274509804 0.588235294117647 0.517647058823529
+newmtl gate_clock1
+map_Kd gate_clock1.jpg
+newmtl bild8
+Kd 0.356862745098039 0.32156862745098 0.282352941176471
+newmtl wall1
+map_Kd wall1.jpg
+newmtl tower1_wall1
+map_Kd tower1_wall1.jpg
+newmtl tower1_edge1
+map_Kd tower1_edge1.jpg
+newmtl rail1
+map_Kd rail1.jpg
+newmtl stairs1
+map_Kd stairs1.jpg
+newmtl floor1
+map_Kd floor1.jpg
+newmtl floor2
+map_Kd floor2.jpg
+newmtl gate_wall4
+map_Kd gate_wall4.jpg
+newmtl stairs2
+map_Kd stairs2.jpg
+newmtl bild9
+Kd 0.513725490196078 0.513725490196078 0.513725490196078
+newmtl wall4
+map_Kd wall4.jpg
+newmtl wall5
+map_Kd wall5.jpg
+newmtl wall6
+map_Kd wall6.jpg
+newmtl plain_wall1
+map_Kd plain_wall1.jpg
+newmtl wall7
+map_Kd wall7.jpg
+newmtl gable2
+map_Kd gable2.jpg
+newmtl tower2
+map_Kd tower2.jpg
+newmtl bild4
+Kd 0.725490196078431 0.701960784313725 0.607843137254902
+newmtl outer_wall
+map_Kd outer_wall.jpg
+newmtl grass1
+map_Kd grass1.jpg
+newmtl rock1
+map_Kd rock1.jpg

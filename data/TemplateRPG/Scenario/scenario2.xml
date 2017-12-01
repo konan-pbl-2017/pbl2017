@@ -1,0 +1,28 @@
+<Scenario>
+	<FSM name="王様との会話" initial="会話前">
+		<State name="会話前">
+			<Event name="王様とぶつかる" action="openDialog" trans="最初の会話">
+			</Event>
+		</State>
+		<State name="最初の会話" message="よく来た。">
+			<Event name="A" trans="次の会話">
+			</Event>
+		</State>
+		<State name="次の会話" message="褒美をつかわすぞ。">
+			<Event name="A" action="closeDialog" trans="会話終了">
+			</Event>
+		</State>
+		<State name="会話終了">
+		</State>
+	</FSM>
+	<FSM name="戦闘" initial="非戦闘状態">
+		<State name="非戦闘状態">
+			<Event name="戦闘開始" action="startFight" trans="戦闘状態" guard="次の会話" sync="A">
+			</Event>
+		</State>
+		<State name="戦闘状態">
+			<Event name="戦闘終了" action="endFight" trans="非戦闘状態">
+			</Event>
+		</State>
+	</FSM>
+</Scenario>

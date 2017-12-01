@@ -1,0 +1,19 @@
+DEF BeakU OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+    keyValue[0 0 1.0 0.0, 0 0 1.0 0.2, 0 0 1.0 0.2, 0 0 1.0 0.0]
+}
+
+DEF BeakU PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+    keyValue[0 0 0, 0.2 0.05 0, 0.2 0.05 0, 0 0 0]
+}
+
+DEF BeakL OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+    keyValue[0 0 1.0 0.0, 0 0 1.0 -0.2, 0 0 1.0 -0.2, 0 0 1.0 0.0]
+}
+
+DEF BeakL PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+    keyValue[0 0 0, -0.22 0.02 0, -0.22 0.02 0, 0 0 0]
+}

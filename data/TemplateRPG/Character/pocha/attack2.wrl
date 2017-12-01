@@ -1,0 +1,74 @@
+DEF Head PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, 0.6 0.2 0, 0.6 0.2 0, 0 0 0 ]
+}
+
+DEF Head OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 1 0, 0 0 1 0.5, 0 0 1 0.5, 0 0 1 0]
+}
+
+DEF BeakU PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, 0.6 0.2 0, 0.6 0.2 0, 0 0 0 ]
+}
+
+DEF BeakU OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 1 0, 0 0 1 0.5, 0 0 1 0.5, 0 0 1 0]
+}
+
+DEF BeakL PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, 0.6 0.2 0, 0.6 0.2 0, 0 0 0 ]
+}
+
+DEF BeakL OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 1 0, 0 0 1 0.5, 0 0 1 0.5, 0 0 1 0]
+}
+
+DEF WingL PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, 0.35 0.1 0, 0.35 0.1 0, 0 0 0]
+}
+
+DEF WingL OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 1 0, 0 0 1 0.25, 0 0 1 0.25, 0 0 1 0]
+}
+
+DEF WingR PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, 0.35 0.1 0, 0.35 0.1 0, 0 0 0]
+}
+
+DEF WingR OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 1 0, 0 0 1 0.25, 0 0 1 0.25, 0 0 1 0]
+}
+
+DEF Body PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, 0.2 0 0, 0.2 0 0, 0 0 0]
+}
+
+DEF LegR OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[1 0 0 0, 0 0 1.0 -0.5, 0 0 1.0 -0.5, 1 0 0 0]
+}
+
+DEF LegR PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, -0.1 -0.1 0, -0.1 -0.1 0, 0 0 0]
+}
+
+DEF LegL OrientationInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[1 0 0 0, 0 0 1.0 -0.5, 0 0 1.0 -0.5, 1 0 0 0]
+}
+
+DEF LegL PositionInterpolator{
+    key[0, 0.1, 1.1, 1.2]
+	keyValue[0 0 0, -0.1 -0.1 0, -0.1 -0.1 0, 0 0 0]
+}

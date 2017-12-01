@@ -1,0 +1,28 @@
+<Scenario>
+	<FSM name="竜の状態" initial="竜が生きている">
+		<State name="竜が生きている">
+			<Event name="竜を倒す" trans="竜が死んでいる">
+			</Event>
+		</State>
+		<State name="竜が死んでいる">
+		</State>
+	</FSM>
+	<FSM name="王様との会話" initial="竜が生きている">
+		<State name="王様のところに居ない">
+			<Event name="王様にぶつかる" trans="王様のところに居る">
+			</Event>
+		</State>
+		<State name="王様のところに居る">
+			<Event name="王様から離れる" trans="王様のところに居ない">
+			</Event>
+		</State>
+	</FSM>
+	<FSM name="秘密の扉の状態" initial="秘密の扉が閉まっている">
+		<State name="秘密の扉が閉まっている">
+			<Event name="秘密の扉が開く" trans="秘密の扉が開いている" guard="竜が死んでいる" sync="王様にぶつかる">
+			</Event>
+		</State>
+		<State name="秘密の扉が開いている">
+		</State>
+	</FSM>
+</Scenario>
