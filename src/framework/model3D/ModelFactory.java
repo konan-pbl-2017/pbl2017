@@ -76,16 +76,20 @@ public class ModelFactory {
 			// STLファイル読み込み
 			try {
 				return loadStlFile(fileName, null, bCalcNormal);
-			} catch (IOException | ModelFileFormatException e) {
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ModelFileFormatException e) {
 				e.printStackTrace();
 			}			
 		} else if (fileName.toLowerCase().endsWith(OBJ_FILE_EXTENSION)) {
 			// OBJファイル読み込み
 			try {
 				return loadObjFile(fileName, bCalcNormal);
-			} catch (IOException | ModelFileFormatException e) {
+			} catch (IOException e) {
 				e.printStackTrace();
-			}			
+			} catch (ModelFileFormatException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		SceneGraph sg = new SceneGraph(SceneGraph.NORMAL_GENERATION);
