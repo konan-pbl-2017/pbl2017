@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
+import framework.game2D.Position2D;
 import framework.gameMain.SimpleMazeGame;
 import framework.model3D.Universe;
 
@@ -31,24 +32,15 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	@Override
 	public void progress(RWTVirtualController virtualController, long interval) {
 		// 迷路ゲームステージを構成するオブジェクトの位置とプレイヤーの位置をもとに速度を0にするかどうかを調べる。
-		boolean resetVelocity = mazeGround.checkGridPoint(mazeSpritePlayer);
+		Position2D gridPoint = mazeGround.getNeighborGridPoint(mazeSpritePlayer);
 
-		// 誤差による位置修正を行うため、プレイヤーのx成分とy成分が0.0の時、位置の値を切り上げる
-		if (mazeSpritePlayer.getVelocity().getX() == 0.0
-				&& mazeSpritePlayer.getVelocity().getY() == 0.0) {
-			mazeSpritePlayer.setPosition(new BigDecimal(mazeSpritePlayer
-					.getPosition().getX())
-			.setScale(0, BigDecimal.ROUND_HALF_UP).doubleValue(),
-			new BigDecimal(mazeSpritePlayer.getPosition().getY())
-			.setScale(0, BigDecimal.ROUND_HALF_UP)
-			.doubleValue());
-		}
-
-		// 速度が0.0にするフラグが立っていれば、速度を0にする
-		if (resetVelocity) {
+		// 速度が0にするフラグが立っていれば、速度を0にする
+		if (gridPoint != null) {
+			mazeSpritePlayer.setPosition(gridPoint);
 			mazeSpritePlayer.setVelocity(0.0, 0.0);
 			disableControl = false;
 		}
+		
 		// キャラが移動していなければ、キー操作の処理を行える。
 		if(!disableControl){
 			// キー操作の処理

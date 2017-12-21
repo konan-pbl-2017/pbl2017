@@ -195,62 +195,11 @@ public class Sprite implements Movable {
 	 *            --- 迷路ゲームのステージ
 	 */
 	public void motion(long interval, Map2D mazeGround) {
-		// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		// 注意事項及び連絡事項。
-		// BigDecimalクラスを使って意図的に丸め誤差を行っているのは、座標点や速度ベクトルの成分値などの誤差が原因で
-		// 衝突判定がうまく機能しない恐れがあったためです。
-		//
-		// 原因はわかりませんが、Boxクラスのインスタンスを生成する際にfloat型でBoxの大きさなどを指定し、
-		// 座標点、速度ベクトルの値がdouble型であり、その値を用いてBoxを動かしているからと推測しています。（単純に、計算処理の結果が間違っている公算大ですが。）
-		// あるいはカメラの見える範囲を設定（setViewRange(・・・)）が原因かと思われます。
-		//
-		// 現在も衝突判定が完全に出来ておらずに不具合が入っているため、そのままにしてあります。
-		//
-		// 衝突判定の完成度としては、ブロック一つに対しては仕様通りの動きになっています。
-		// ですが、4個（ブロックがくっついてる状態）の場合だとうまくいかない状態です。
-		//
-		// キャッシュ処理もほとんど行っていないため、若干重たく感じると思います。
-		//
-		// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		// スプライトの位置を表す値を小数第2位以降を切り捨て、スプライトの位置を再計算する
-		position.setX(new BigDecimal(position.getX()).setScale(2,BigDecimal.ROUND_DOWN).doubleValue());
-		position.setY(new BigDecimal(position.getY()).setScale(2,BigDecimal.ROUND_DOWN).doubleValue());
-		
-		velocity.setX(new BigDecimal(velocity.getX()).setScale(3,BigDecimal.ROUND_UP).doubleValue());
-		velocity.setY(new BigDecimal(velocity.getY()).setScale(3,BigDecimal.ROUND_UP).doubleValue());
-
 		// 衝突判定する前に一度スプライトの位置を動かす
 		motion(interval);
 
-		// 衝突判定の結果
-		MapCollisionResult mazeCollisionResult = new MapCollisionResult();
-
-//		System.out.println(position.getX() + "," + position.getY());
-//		System.out.println(velocity.getX() + "," + velocity.getX());
-
-		mazeCollisionResult = mazeGround.checkCollision(this);
-
-		if (mazeCollisionResult.isCheckColision()) {
-			velocity.set(mazeCollisionResult.getColisionBackVelocity().getX(), mazeCollisionResult.getColisionBackVelocity().getY());
-			motion(interval);
-			mazeCollisionResult.setCheckColision(false);
-
-			// ////////////////////////////////////////////////////
-			//
-			// 再び衝突判定
-			//
-			// ////////////////////////////////////////////////////
-
-			// 衝突判定の結果
-			mazeCollisionResult = mazeGround.checkCollision(this);
-			if (mazeCollisionResult.isCheckColision()) {
-				velocity.set(mazeCollisionResult.getColisionBackVelocity().getX(), mazeCollisionResult.getColisionBackVelocity().getY());
-				motion(interval);
-				mazeCollisionResult.setCheckColision(false);
-			}
-		}
+		// 衝突判定および衝突応答
+		mazeGround.collisionResponse(this);
 	}
 
 	
